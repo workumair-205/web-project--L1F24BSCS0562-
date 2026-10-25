@@ -1,0 +1,256 @@
+:root {
+    --primary: #FFC107;
+    --dark: #222;
+    --light: #eef7ff;
+    --card: #f9e9e9;
+    --radius: 8px
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    font-family: Open Sans, sans-serif;
+    background: var(--light);
+    font-size: 16px
+}
+
+.top-bar {
+    background: #111;
+    color: #888;
+    font-size: 13px;
+    padding: 9px 7%;
+    display: flex;
+    justify-content: space-between
+}
+
+.top-bar span {
+    color: var(--primary)
+}
+
+.main-header {
+    background: #fff;
+    display: flex;
+    height: 76px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08)
+}
+
+#main-header {
+    border-bottom: 4px solid var(--primary);
+    position: sticky;
+    top: 0
+}
+
+.logo-side {
+    width: 32%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: 7%;
+    clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%)
+}
+
+.logo {
+    font-family: Montserrat;
+    font-weight: 800;
+    font-size: 25px
+}
+
+.logo .yellow {
+    color: var(--primary)
+}
+
+.nav-side {
+    width: 52%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
+    margin-left: -2%
+}
+
+.nav-link {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 13.5px;
+    text-transform: uppercase;
+    color: #111;
+    text-decoration: none;
+    margin: 0 14px;
+    transition: all 0.2s
+}
+
+.nav-link:hover {
+    border-bottom: 3px solid #111;
+    transform: translateY(-1px)
+}
+
+.nav-link.active {
+    border-bottom: 3px solid #111
+}
+
+.right-side {
+    width: 20%;
+    background: var(--light);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    margin-left: -2%
+}
+
+.page-hero {
+    background: #f5f3f0 url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    padding: 60px;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.page-hero h1 {
+    font-family: Montserrat;
+    font-size: 38px;
+    font-style: italic;
+    font-weight: 800
+}
+
+.info-row {
+    display: flex;
+    gap: 28px;
+    padding: 50px 10%;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.info-card {
+    background: var(--card);
+    padding: 32px;
+    border-radius: var(--radius);
+    width: 290px;
+    font-size: 14.5px;
+    line-height: 2.8;
+    filter: drop-shadow(0 5px 14px rgba(0, 0, 0, 0.09));
+    transition: all 0.3s
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12)
+}
+
+.info-card h4 {
+    font-family: Montserrat;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 16px
+}
+
+.form-wrapper {
+    background: #f5f3f0 url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    padding: 100px 7%
+}
+
+.form-box {
+    background: var(--light);
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 44px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1)
+}
+
+.form-box h2 {
+    font-family: Montserrat;
+    font-style: italic;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 32px
+}
+
+.form-box h2 span {
+    color: var(--primary)
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px
+}
+
+.form-grid input,
+textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: var(--card);
+    font-size: 14.5px;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: all 0.2s
+}
+
+.form-grid input:focus,
+textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2)
+}
+
+textarea {
+    margin-top: 18px;
+    height: 140px
+}
+
+.btn-send {
+    background: var(--primary);
+    border: none;
+    padding: 16px 32px;
+    border-radius: 28px;
+    font-family: Montserrat;
+    font-weight: 800;
+    font-size: 14.5px;
+    cursor: pointer;
+    appearance: none;
+    transition: all 0.25s
+}
+
+.btn-send:hover {
+    filter: brightness(1.08);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4)
+}
+
+@media(max-width:900px) {
+    .info-row {
+        flex-direction: column;
+        align-items: center
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.footer {
+    background: var(--dark);
+    color: #777;
+    padding: 50px 7%;
+    display: flex;
+    gap: 80px;
+    font-size: 14px;
+    border-top: 6px solid var(--primary)
+}
+
+.footer-bottom {
+    background: var(--primary);
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #111
+}
