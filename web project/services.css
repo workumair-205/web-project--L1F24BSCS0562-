@@ -437,3 +437,108 @@ body {
     font-size: 14px;
     margin-top: 40px
 }
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 8px 4%;
+        flex-wrap: wrap;
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .main-header {
+        height: auto;
+        min-height: 65px;
+        flex-wrap: wrap;
+    }
+
+    .logo-side {
+        width: 100%;
+        min-height: 60px;
+        padding: 10px 5%;
+        clip-path: none;
+    }
+
+    .nav-side {
+        width: 100%;
+        margin-left: 0;
+        padding: 14px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+        clip-path: none;
+    }
+
+    .nav-link {
+        margin: 0 4px;
+        font-size: 12px;
+    }
+
+    .right-side {
+        display: none;
+    }
+
+    .page-hero {
+        padding: 35px 15px;
+    }
+
+    .page-hero h1 {
+        font-size: 28px;
+    }
+
+    .about-main,
+    .facilities {
+        padding: 30px 5%;
+        gap: 25px;
+    }
+
+    .about-left,
+    .video-box,
+    .facilities-text,
+    .facilities-img-wrap {
+        min-width: 0;
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .about-left h2 {
+        font-size: 28px;
+    }
+
+    .video-box {
+        height: 230px;
+    }
+
+    .pricing-3 {
+        padding: 0 5%;
+    }
+
+    .price-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .columns {
+        column-count: 1;
+        padding: 25px 5%;
+    }
+
+    .timetable-section {
+        padding: 25px 3%;
+        overflow-x: auto;
+    }
+
+    .timetable {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .timetable th,
+    .timetable td {
+        padding: 9px 5px;
+    }
+
+    .footer {
+        padding: 30px 5%;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
