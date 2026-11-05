@@ -223,10 +223,11 @@ body {
     border-top: 6px solid #FFC107
 }
 
+
 @media (max-width: 1024px) {
     .logo-side {
         width: 30%;
-        padding-left: 4%;
+        padding-left: 3%;
     }
 
     .nav-side {

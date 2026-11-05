@@ -369,3 +369,37 @@ body {
         gap: 20px;
     }
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    animation: fadeIn 1s ease;
+}
+
+.trainer-box,
+.news-card {
+    transition: 0.3s ease;
+}
+
+.trainer-box:hover,
+.news-card:hover {
+    transform: translateY(-8px);
+}
+
+button,
+.btn {
+    transition: 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+    transform: scale(1.05);
+}
