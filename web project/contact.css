@@ -27,29 +27,27 @@ body {
     justify-content: space-between
 }
 
-.top-bar span {
+.top-bar span,
+.logo .yellow,
+.form-box h2 span {
     color: var(--primary)
 }
 
 .main-header {
     background: #fff;
     display: flex;
+    flex-wrap: nowrap;
     height: 76px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08)
-}
-
-#main-header {
     border-bottom: 4px solid var(--primary);
-    position: sticky;
-    top: 0
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08)
 }
 
 .logo-side {
-    width: 32%;
+    width: 28%;
+    flex-shrink: 0;
     background: #fff;
     display: flex;
     align-items: center;
@@ -63,16 +61,15 @@ body {
     font-size: 25px
 }
 
-.logo .yellow {
-    color: var(--primary)
-}
-
 .nav-side {
-    width: 52%;
+    width: 58%;
+    flex: 0 0 58%;
     background: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
     clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
     margin-left: -2%
 }
@@ -80,25 +77,29 @@ body {
 .nav-link {
     font-family: Montserrat;
     font-weight: 700;
-    font-size: 13.5px;
+    font-size: 13px;
     text-transform: uppercase;
     color: #111;
     text-decoration: none;
-    margin: 0 14px;
-    transition: all 0.2s
+    margin: 0 9px;
+    padding-bottom: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all .2s
 }
 
-.nav-link:hover {
-    border-bottom: 3px solid #111;
-    transform: translateY(-1px)
-}
-
+.nav-link:hover,
 .nav-link.active {
     border-bottom: 3px solid #111
 }
 
+.nav-link:hover {
+    transform: translateY(-1px)
+}
+
 .right-side {
-    width: 20%;
+    width: 18%;
+    flex: 1;
     background: var(--light);
     clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
     margin-left: -2%
@@ -133,13 +134,13 @@ body {
     width: 290px;
     font-size: 14.5px;
     line-height: 2.8;
-    filter: drop-shadow(0 5px 14px rgba(0, 0, 0, 0.09));
-    transition: all 0.3s
+    filter: drop-shadow(0 5px 14px rgba(0, 0, 0, .09));
+    transition: all .3s
 }
 
 .info-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .12)
 }
 
 .info-card h4 {
@@ -160,7 +161,7 @@ body {
     margin: 0 auto;
     padding: 44px;
     border-radius: var(--radius);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .1)
 }
 
 .form-box h2 {
@@ -169,10 +170,6 @@ body {
     text-align: center;
     font-size: 28px;
     margin-bottom: 32px
-}
-
-.form-box h2 span {
-    color: var(--primary)
 }
 
 .form-grid {
@@ -191,14 +188,14 @@ textarea {
     font-size: 14.5px;
     appearance: none;
     -webkit-appearance: none;
-    transition: all 0.2s
+    transition: all .2s
 }
 
 .form-grid input:focus,
 textarea:focus {
     border-color: var(--primary);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2)
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, .2)
 }
 
 textarea {
@@ -216,24 +213,13 @@ textarea {
     font-size: 14.5px;
     cursor: pointer;
     appearance: none;
-    transition: all 0.25s
+    transition: all .25s
 }
 
 .btn-send:hover {
     filter: brightness(1.08);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4)
-}
-
-@media(max-width:900px) {
-    .info-row {
-        flex-direction: column;
-        align-items: center
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr
-    }
+    box-shadow: 0 8px 20px rgba(255, 193, 7, .4)
 }
 
 .footer {
@@ -254,129 +240,145 @@ textarea {
     font-size: 13px;
     color: #111
 }
-@media (max-width: 768px) {
+
+@media(max-width:900px) {
+    .info-row {
+        flex-direction: column;
+        align-items: center
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width:768px) {
     .top-bar {
         padding: 8px 4%;
         flex-wrap: wrap;
         gap: 5px;
-        font-size: 11px;
+        font-size: 11px
     }
 
     .main-header {
         height: auto;
-        flex-wrap: wrap;
+        flex-wrap: wrap
     }
 
     .logo-side {
         width: 100%;
         min-height: 60px;
         padding: 10px 5%;
-        clip-path: none;
+        clip-path: none
     }
 
     .nav-side {
         width: 100%;
+        flex: 0 0 100%;
         margin-left: 0;
         padding: 14px 4%;
         flex-wrap: wrap;
         gap: 12px;
-        clip-path: none;
+        justify-content: center;
+        clip-path: none
     }
 
     .nav-link {
         margin: 0 4px;
-        font-size: 12px;
+        font-size: 12px
     }
 
     .right-side {
-        display: none;
+        display: none
     }
 
     .page-hero {
-        padding: 35px 15px;
+        padding: 35px 15px
     }
 
     .page-hero h1 {
-        font-size: 28px;
+        font-size: 28px
     }
 
     .info-row {
         padding: 30px 5%;
-        gap: 20px;
+        gap: 20px
     }
 
     .info-card {
         width: 100%;
         max-width: 350px;
         padding: 24px;
-        line-height: 2;
+        line-height: 2
     }
 
     .form-wrapper {
-        padding: 40px 5%;
+        padding: 40px 5%
     }
 
     .form-box {
-        padding: 25px 18px;
+        padding: 25px 18px
     }
 
     .form-box h2 {
-        font-size: 23px;
+        font-size: 23px
     }
 
     .form-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 14px
     }
 
     .form-grid input,
     textarea {
-        font-size: 16px;
+        font-size: 16px
     }
 
     .footer {
         padding: 30px 5%;
         flex-direction: column;
-        gap: 20px;
+        gap: 20px
     }
 
     .footer-bottom {
         padding: 15px 5%;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 10px
     }
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(30px)
     }
+
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0)
     }
 }
 
 h1 {
-    animation: fadeIn 1s ease;
+    animation: fadeIn 1s ease
 }
 
 .trainer-box,
 .news-card {
-    transition: 0.3s ease;
+    transition: .3s ease
 }
 
 .trainer-box:hover,
 .news-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px)
 }
 
 button,
 .btn {
-    transition: 0.3s ease;
+    transition: .3s ease
 }
 
 button:hover,
 .btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.05)
 }

@@ -403,3 +403,55 @@ button:hover,
 .btn:hover {
     transform: scale(1.05);
 }
+
+/* Portfolio Navbar Fix */
+
+.logo-side {
+    width: 30%;
+}
+
+.nav-side {
+    width: 58%;
+    margin-left: -2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.nav-link {
+    font-size: 13px;
+    margin: 0 9px;
+    padding-bottom: 4px;
+    white-space: nowrap;
+}
+
+.right-side {
+    width: 16%;
+    margin-left: -2%;
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+    .logo-side {
+        width: 100%;
+    }
+
+    .nav-side {
+        width: 100%;
+        margin-left: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-link {
+        margin: 0 5px;
+        font-size: 12px;
+    }
+
+    .right-side {
+        display: none;
+    }
+}
